@@ -1,0 +1,247 @@
+[
+  {
+    "id": "1",
+    "name": "Álava",
+    "comunity_id": "16"
+  },
+  {
+    "id": "2",
+    "name": "Albacete",
+    "comunity_id": "5"
+  },
+  {
+    "id": "3",
+    "name": "Alicante",
+    "comunity_id": "17"
+  },
+  {
+    "id": "4",
+    "name": "Almería",
+    "comunity_id": "1"
+  },
+  {
+    "id": "5",
+    "name": "Asturias",
+    "comunity_id": "3"
+  },
+  {
+    "id": "6",
+    "name": "Badajoz",
+    "comunity_id": "8"
+  },
+  {
+    "id": "7",
+    "name": "Barcelona",
+    "comunity_id": "7"
+  },
+  {
+    "id": "8",
+    "name": "Burgos",
+    "comunity_id": "6"
+  },
+  {
+    "id": "9",
+    "name": "Cáceres",
+    "comunity_id": "8"
+  },
+  {
+    "id": "10",
+    "name": "Cádiz",
+    "comunity_id": "1"
+  },
+  {
+    "id": "11",
+    "name": "Cantabria",
+    "comunity_id": "4"
+  },
+  {
+    "id": "12",
+    "name": "Castellón",
+    "comunity_id": "17"
+  },
+  {
+    "id": "13",
+    "name": "Ciudad Real",
+    "comunity_id": "5"
+  },
+  {
+    "id": "14",
+    "name": "Córdoba",
+    "comunity_id": "1"
+  },
+  {
+    "id": "15",
+    "name": "Cuenca",
+    "comunity_id": "5"
+  },
+  {
+    "id": "16",
+    "name": "Gerona",
+    "comunity_id": "7"
+  },
+  {
+    "id": "17",
+    "name": "Granada",
+    "comunity_id": "1"
+  },
+  {
+    "id": "18",
+    "name": "Guadalajara",
+    "comunity_id": "5"
+  },
+  {
+    "id": "19",
+    "name": "Guipúzcoa",
+    "comunity_id": "16"
+  },
+  {
+    "id": "20",
+    "name": "Huelva",
+    "comunity_id": "1"
+  },
+  {
+    "id": "21",
+    "name": "Huesca",
+    "comunity_id": "2"
+  },
+  {
+    "id": "22",
+    "name": "Islas Baleares",
+    "comunity_id": "10"
+  },
+  {
+    "id": "23",
+    "name": "Jaén",
+    "comunity_id": "1"
+  },
+  {
+    "id": "24",
+    "name": "La Coruña",
+    "comunity_id": "9"
+  },
+  {
+    "id": "25",
+    "name": "La Rioja",
+    "comunity_id": "12"
+  },
+  {
+    "id": "26",
+    "name": "Las Palmas",
+    "comunity_id": "11"
+  },
+  {
+    "id": "27",
+    "name": "León",
+    "comunity_id": "6"
+  },
+  {
+    "id": "28",
+    "name": "Lérida",
+    "comunity_id": "7"
+  },
+  {
+    "id": "29",
+    "name": "Lugo",
+    "comunity_id": "9"
+  },
+  {
+    "id": "30",
+    "name": "Madrid",
+    "comunity_id": "13"
+  },
+  {
+    "id": "31",
+    "name": "Málaga",
+    "comunity_id": "1"
+  },
+  {
+    "id": "32",
+    "name": "Murcia",
+    "comunity_id": "14"
+  },
+  {
+    "id": "33",
+    "name": "Navarra",
+    "comunity_id": "15"
+  },
+  {
+    "id": "34",
+    "name": "Orense",
+    "comunity_id": "9"
+  },
+  {
+    "id": "35",
+    "name": "Palencia",
+    "comunity_id": "6"
+  },
+  {
+    "id": "36",
+    "name": "Pontevedra",
+    "comunity_id": "9"
+  },
+  {
+    "id": "37",
+    "name": "Salamanca",
+    "comunity_id": "6"
+  },
+  {
+    "id": "38",
+    "name": "Santa Cruz de Tenerife",
+    "comunity_id": "11"
+  },
+  {
+    "id": "39",
+    "name": "Segovia",
+    "comunity_id": "6"
+  },
+  {
+    "id": "40",
+    "name": "Sevilla",
+    "comunity_id": "1"
+  },
+  {
+    "id": "41",
+    "name": "Soria",
+    "comunity_id": "6"
+  },
+  {
+    "id": "42",
+    "name": "Tarragona",
+    "comunity_id": "7"
+  },
+  {
+    "id": "43",
+    "name": "Teruel",
+    "comunity_id": "2"
+  },
+  {
+    "id": "44",
+    "name": "Toledo",
+    "comunity_id": "5"
+  },
+  {
+    "id": "45",
+    "name": "Valencia",
+    "comunity_id": "17"
+  },
+  {
+    "id": "46",
+    "name": "Valladolid",
+    "comunity_id": "6"
+  },
+  {
+    "id": "47",
+    "name": "Vizcaya",
+    "comunity_id": "16"
+  },
+  {
+    "id": "48",
+    "name": "Zamora",
+    "comunity_id": "6"
+  },
+  {
+    "id": "49",
+    "name": "Zaragoza",
+    "comunity_id": "2"
+  }
+]  

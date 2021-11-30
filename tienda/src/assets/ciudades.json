@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Móstoles",
+    "province_id": "30",
+    "comunity_id": "13"
+  },
+  {
+    "id": "2",
+    "name": "Campo de Criptana",
+    "province_id": "13",
+    "comunity_id": "5"
+  },
+  {
+    "id": "3",
+    "name": "Tordesillas",
+    "province_id": "46",
+    "comunity_id": "6"
+  },
+  {
+    "id": "4",
+    "name": "Santiago de Compostela",
+    "province_id": "24",
+    "comunity_id": "9"
+  },
+  {
+    "id": "5",
+    "name": "Toro",
+    "province_id": "48",
+    "comunity_id": "6"
+  },
+  {
+    "id": "6",
+    "name": "Alcázar de San Juán",
+    "province_id": "13",
+    "comunity_id": "5"
+  },
+  {
+    "id": "7",
+    "name": "Alcorcón",
+    "province_id": "30",
+    "comunity_id": "13"
+  }
+]

@@ -1,0 +1,354 @@
+<app-nav></app-nav>
+
+<main  class="cs-page-wrapper">
+
+    <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+        <div class="container">
+          <ol class="breadcrumb breadcrumb-alt mb-0">
+            <li class="breadcrumb-item">
+              <a [routerLink]="['/']"><i class="cxi-home"></i></a>
+            </li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+          </ol>
+        </div>
+    </nav>
+
+    <section class="container pt-3 pt-md-4">
+        <div class="row">
+    
+            <!-- Nav tabs -->
+            <div class="col-md-4">
+            <div class="mb-md-5 mb-4 pb-lg-4" data-simplebar="" data-simplebar-auto-hide="false">
+                <ul class="nav flex-md-column flex-nowrap text-nowrap" role="tablist">
+                <li class="nav-item">
+                    <a href="#contact" id="contact-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0 active" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="true">
+                    Contacto
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#stores" id="stores-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0" data-toggle="tab" role="tab" aria-controls="stores" aria-selected="false">
+                    Nuestras tiendas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#faq" id="faq-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0" data-toggle="tab" role="tab" aria-controls="faq" aria-selected="false">
+                    Preguntas Frecuentes
+                    </a>
+                </li>
+                </ul>
+            </div>
+            </div>
+    
+            <!-- Tabs content -->
+            <div class="col-md-8 ml-auto pt-md-2">
+            <div class="tab-content pb-2 pb-sm-4 pb-lg-5">
+    
+                <!-- Tab: Contact Us -->
+                <div id="contact" class="tab-pane pb-5 fade show active" role="tabpanel" aria-labelledby="contact-tab">
+                <p class="text-dark lead font-weight-bold">Si tienes alguna pregunta, inquietud o comentario, ¡nos encantaría escucharte!<br> Envía tu consulta utilizando cualquiera de los siguientes métodos:</p>
+                <div class="nav-dark mb-5">
+                    <a href="tel:918281904" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2" target="_blank">
+                    <i class="cxi-iphone text-primary lead mr-2"></i>
+                    <span>91 828 19 04</span>
+                    </a>
+                    <a href="https://mail.google.com/" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2" target="_blank">
+                    <i class="cxi-mail text-primary lead mr-2"></i>
+                    <span>buy_it_outlet_alcorcon@gmail.com</span>
+                    </a>
+                    <a href="https://www.whatsapp.com/?lang=es" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2" target="_blank">
+                    <i class="cxi-whatsapp text-primary lead mr-2"></i>
+                    <span>647 64 19 74</span>
+                    </a>
+                </div>
+                <p class="text-dark lead font-weight-bold pb-2">Puedes ponerte en contacto con nosotros, rellenando el siguiente formulario:</p>
+                <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+                    <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label for="cont-name">Nombre y apellidos</label>
+                        <input type="text" id="cont-name" class="form-control form-control-lg" placeholder="Tu nombre y apellidos" required="" name="cliente" [(ngModel)]="contacto.cliente">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="cont-email">Email</label>
+                        <input type="email" id="cont-email" class="form-control form-control-lg" placeholder="Tu Email" required="" name="email" [(ngModel)]="contacto.email">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="cont-phone">Teléfono</label>
+                        <input type="text" id="cont-phone" class="form-control form-control-lg bg-0" maxlength="9" placeholder="Tu número de teléfono" required name="telefono" [(ngModel)]="contacto.telefono">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="cont-subject">Asunto</label>
+                        <input type="text" id="cont-subject" class="form-control form-control-lg bg-0" required placeholder="Asunto de tu mensaje" name="asunto" [(ngModel)]="contacto.asunto">
+                    </div>
+                    <div class="col-12 form-group">
+                        <label for="cont-message">Mensaje</label>
+                        <textarea id="cont-message" class="form-control form-control-lg" rows="5" placeholder="Escribe tu mensaje aquí" required="" name="mensaje" [(ngModel)]="contacto.mensaje"></textarea>
+                    </div>
+                    <div class="col-lg-4 col-sm-5 pt-2">
+                        <button *ngIf="!load_btn" type="submit" class="btn btn-primary btn-lg btn-block">Enviar mensaje</button>
+                        <button *ngIf="load_btn" type="button" class="btn btn-secondary">
+                            <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+                            Enviando...
+                        </button>
+                    </div>
+                    </div>
+                </form>
+                </div>
+    
+                <!-- Tab: Outlet Stores -->
+                <div id="stores" class="tab-pane pb-3 fade" role="tabpanel" aria-labelledby="stores-tab">
+                <div class="row">
+                    <div class="col-sm-6 mb-grid-gutter">
+                    <div class="card card-hover">
+                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/01.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h3 class="h4">Móstoles</h3>
+                        <ul class="mb-0 list-unstyled nav-dark">
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:916234897" target="_blank">
+                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
+                                91 623 48 97
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:newyork@example.com" target="_blank">
+                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
+                                buy_it_outlet_mostoles@gmail.com
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <div class="d-flex">
+                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
+                                Desde las 9:00 hasta las 22:00
+                            </div>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="https://www.google.com/maps/place/C.+Montero,+35,+28934+M%C3%B3stoles,+Madrid/@40.3212985,-3.8696842,17z/data=!3m1!4b1!4m5!3m4!1s0xd418dd484bead0d:0x7fe8aacfe24683b7!8m2!3d40.3212985!4d-3.8674955" target="_blank">
+                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>Montero 35, 28934 Móstoles 
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6 mb-grid-gutter">
+                    <div class="card card-hover">
+                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/02.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h3 class="h4">Collado Villalba</h3>
+                        <ul class="mb-0 list-unstyled nav-dark">
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:912887659" target="_blank">
+                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
+                                91 288 76 59
+                            </a>    
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:delaware@example.com" target="_blank">
+                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
+                                buy_it_outlet_villalba@gmail.com
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <div class="d-flex">
+                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
+                                Desde las 9:00 hasta las 22:00
+                            </div>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="https://www.google.com/maps/place/C.+Playa+Samil,+18,+28400+Collado+Villalba,+Madrid/@40.6172049,-4.0139457,17z/data=!3m1!4b1!4m5!3m4!1s0xd41744638ac822b:0xd57b71579cf2cbfc!8m2!3d40.6172049!4d-4.011757" target="_blank">
+                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>Playa Samil 18, 28400 Collado Villalba 
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6 mb-grid-gutter">
+                    <div class="card card-hover">
+                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/03.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h3 class="h4">Fuenlabrada</h3>
+                        <ul class="mb-0 list-unstyled nav-dark">
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:916587698" target="_blank">
+                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
+                                91 658 76 98
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:newjersey@example.com" target="_blank">
+                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
+                                buy_it_outlet_fuenlabrada@gmail.com
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <div class="d-flex">
+                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
+                                Desde las 9:00 hasta las 22:00
+                            </div>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="https://www.google.com/maps/place/C.+de+Valpara%C3%ADso,+12,+28944+Fuenlabrada,+Madrid/@40.2838639,-3.7871728,17z/data=!3m1!4b1!4m5!3m4!1s0xd418b01e8dea11b:0x4180f9706cb1e916!8m2!3d40.2838639!4d-3.7849841" target="_blank">
+                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>Valparaiso 12, 28944 Fuenlabrada
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6 mb-grid-gutter">
+                    <div class="card card-hover">
+                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/04.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h3 class="h4">Madrid</h3>
+                        <ul class="mb-0 list-unstyled nav-dark">
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:912453876" target="_blank">
+                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
+                                91 245 38 76
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:maine@example.com" target="_blank">
+                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
+                                buy_it_outlet_madrid@gmail.com
+                            </a>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <div class="d-flex">
+                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
+                                Desde las 9:00 hasta las 22:00
+                            </div>
+                            </li>
+                            <li class="mb-2 pb-1">
+                            <a class="d-flex nav-link font-weight-normal p-0" href="https://www.google.com/maps/place/Estadio+Santiago+Bernab%C3%A9u/@40.4530428,-3.6905224,17z/data=!3m1!4b1!4m5!3m4!1s0xd4228e23705d39f:0xa8fff6d26e2b1988!8m2!3d40.4530387!4d-3.6883337" target="_blank">
+                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>Av. de Concha Espina 1, 28036 Madrid
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+    
+                <!-- Tab: FAQ -->
+                <div id="faq" class="tab-pane fade mt-n3 mt-dm-0 pb-5" role="tabpanel" aria-labelledby="faq-tab">
+                <div class="accordion-alt" id="accordion">
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-1">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-1" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="faq-1">¿Necesito registrarme para realizar un pedido?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-1" class="collapse show" aria-labelledby="headingFaq-1" data-parent="#accordion">
+                        <div class="card-body text-muted">En efecto, si quieres realizar un pedido, debes tener creada una cuenta con nosotros.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-2">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-2" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-2">¿Cuál es el tiempo de entrega estimado?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-2" class="collapse" aria-labelledby="headingFaq-2" data-parent="#accordion">
+                        <div class="card-body text-muted">Depende del método de envío que escojas; el gratuito tardará 1 mes, el estándar de 2 a 3 semanas y el express de 1 a 2 semanas.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-3">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-3" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-3">¿Cómo puedo pagar mi pedido?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-3" class="collapse" aria-labelledby="headingFaq-3" data-parent="#accordion">
+                        <div class="card-body text-muted">Puedes pagar contra-reembolso cuando recibas el pedido en tu casa, por paypal o tarjeta.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-4">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-4" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-4">¿Puedo obtener un reembolso si el precio ha cambiado desde que lo pedí?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-4" class="collapse" aria-labelledby="headingFaq-4" data-parent="#accordion">
+                        <div class="card-body text-muted">No, una vez realizado el pedido, tienes una semana para solicitar el reembolso, pasados esos 7 días no se podrá solicitar.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-5">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-5" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-5">¿Reembolsan los gastos de envío si devuelvo algo?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-5" class="collapse" aria-labelledby="headingFaq-5" data-parent="#accordion">
+                        <div class="card-body text-muted">Sí, siempre y cuando se encuentre en el periodo de una semana, desde la fecha del pedido.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-6">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-6" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-6">¿Qué documentos se proporcionarán con el pedido?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-6" class="collapse" aria-labelledby="headingFaq-6" data-parent="#accordion">
+                        <div class="card-body text-muted">Con el pedido, irá incluida la factura de la compra realizada.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-7">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-7" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-7">¿Puedo devolver el pedido al mensajero si algo no me conviene?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-7" class="collapse" aria-labelledby="headingFaq-7" data-parent="#accordion">
+                        <div class="card-body text-muted">Depende de si ha transcurrido más de 7 días desde la fecha de pedido.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                    <div class="card border-bottom">
+                    <div class="card-header" id="headingFaq-8">
+                        <h5 class="accordion-heading">
+                        <a href="#faq-8" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-8">¿Qué debo hacer si mi pedido aún no ha sido entregado?
+                            <span class="accordion-indicator"></span>
+                        </a>
+                        </h5>
+                    </div>
+                    <div id="faq-8" class="collapse" aria-labelledby="headingFaq-8" data-parent="#accordion">
+                        <div class="card-body text-muted">Puedes ponerte en contacto con nosotros mediante nuestro correo electónico, las diversas redes sociales o bien rellenando el formulario que encontrarás en el menú de contacto.</div>
+                    </div>
+                    </div>
+                    <!-- Card -->
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<app-footer></app-footer>
+

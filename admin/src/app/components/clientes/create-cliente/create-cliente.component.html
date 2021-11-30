@@ -1,0 +1,59 @@
+<app-sidebar></app-sidebar>
+
+<!-- Page title-->
+<div class="border-bottom mt-2 mb-5">
+    <h1 class="mt-2 mt-md-4 mb-3 pt-5">Clientes</h1>
+</div>
+
+<form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+    <div class="card box-shadow-sm">
+        <div class="card-header">
+            <h5 style="margin-bottom: 0px;">Registro de cliente</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label for="validationCustom01" class="form-label">Nombre</label>
+                    <input class="form-control" type="text" placeholder="Escriba aquí su nombre" required name="nombre" [(ngModel)]="cliente.nombre">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="validationCustom01" class="form-label">Apellidos</label>
+                    <input class="form-control" type="text" placeholder="Escriba aquí sus apellidos" required name="apellidos" [(ngModel)]="cliente.apellidos">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="validationCustom01" class="form-label">Email</label>
+                    <input class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" placeholder="Escriba aquí su email" required name="email" [(ngModel)]="cliente.email">
+                </div>
+
+                <div class="col-md-4 form-group">
+                    <label for="validationCustom01" class="form-label">Teléfono</label>
+                    <input #telefono class="form-control" pattern="(6|7|8|9)([0-9]){8}" maxlength="9" minlength="9" type="text" placeholder="Escriba aquí su número" required name="telefono" [(ngModel)]="cliente.telefono">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="validationCustom01" class="form-label">Fecha nacimiento</label>
+                    <input class="form-control" type="date" required name="f_nacimiento" [(ngModel)]="cliente.f_nacimiento">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="validationCustom01" class="form-label">DNI</label>
+                    <input class="form-control" pattern="[0-9]{8}[A-Za-z]{1}" maxlength="9" minlength="9" type="text" placeholder="Escriba aquí su DNI" required name="dni" [(ngModel)]="cliente.dni">
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">Género</label>
+                    <select class="form-control custom-select" required name="genero" [(ngModel)]="cliente.genero">
+                        <option value="" disabled selected>Seleccione su género</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+            </div>    
+        </div>  
+        <div class="card-footer">
+            <button *ngIf="!load_btn" class="btn btn-success mr-2" type="submit">Crear cliente</button>
+            <button *ngIf="load_btn" type="button" class="btn btn-secondary" disabled>
+                <span class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>
+                Cargando...
+            </button>
+            <a class="btn btn-warning" [routerLink]="['/panel/clientes']">Volver</a>
+        </div>
+    </div>
+</form>        

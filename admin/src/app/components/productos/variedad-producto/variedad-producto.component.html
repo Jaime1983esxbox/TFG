@@ -1,0 +1,126 @@
+<app-sidebar></app-sidebar>
+<!-- Page title-->
+<div class="border-bottom mt-2 mb-5">
+    <h1 class="mt-2 mt-md-4 mb-3 pt-5">Productos</h1>
+    <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+      <h5 class="text-muted">Listado de variedades</h5>
+    </div>
+    </div>
+
+  <div class="card box-shadow-sm">
+    <div class="card-header">
+        <h5 style="margin-bottom: 0px;">Variedades del producto</h5>
+    </div>
+
+    <div class="card-body">
+      <div style="max-width: 48rem;">
+        <div class="row mb-5">
+          <div class="col-md-4" style="padding-right: 0;">
+            <img [src]="url + 'obtener_portada/' + producto.portada" class="img-thumbnail rounded-0" alt="Square image">
+          </div>
+          <div class="col-md-8" style="padding-left: 0;">
+            <div class="card" style="height: 100%; background-color: #f5eeee;">
+              <div class="card-body">
+                <h3 class="card-product-title text-truncate mb-2">
+                  <a class="nav-link" mb-3>{{producto.titulo}}</a>
+                  <p class="text-muted">{{producto.descripcion}}</p>
+                  <div class="d-flex align-items-center">
+                    <span class="h5 d-inline-block mb-0 text-danger">{{producto.precio}}€</span>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row align-items-center">
+            <label class="col-md-3 col-form-label font-weight-medium" for="text-input">Título de la variedad</label>
+            <div class="col-md-9">
+              <input class="form-control" type="text" id="text-input" required placeholder="Título de la variedad" name="titulo_variedad" [(ngModel)]="producto.titulo_variedad">
+            </div>
+        </div>
+        <div class="form-group row align-items-center">
+          <label class="col-md-3 col-form-label font-weight-medium" for="text-input">Variedades</label>
+          <div class="col-md-9">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Nueva variedad" name="nueva_variedad" [(ngModel)]="nueva_variedad">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" (click)="agregar_variedad()">Agregar</button>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-9">
+            <div class="table-responsive table-bordered mt-3">
+              <table class="table table-sm" *ngIf="producto.variedades">
+                <thead class="thead-dark">
+                  <tr>
+             
+                    <th>Título</th>
+                    <th>Eliminar</th>
+                   
+                  </tr>
+                </thead>
+                <ng-container *ngIf="producto.variedades.length == 0">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" class="text-center">
+                        <span class="text-muted">No hay categorias disponibles</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </ng-container>
+                <ng-container *ngIf="producto.variedades.length >= 1">
+                  <tbody *ngFor="let variedad of producto.variedades; let indice = index">
+                  <!-- <tbody *ngFor="let variedad of producto.variedades | slice: (page-1)*pageSize : (page-1)*pageSize + pageSize; let indice = index"> -->
+                    <tr>
+                      <td>{{variedad.titulo}}</td>
+                      <td>
+                        <button _ngcontent-mhn-c116="" data-toggle="modal" class="btn btn-danger btn-sm" [attr.data-target]="'#delete-'+indice"><i _ngcontent-mhn-c116="" class="cxi-delete"></i></button>
+                      </td>
+                    </tr>
+                    <div class="modal fade" id="delete-{{indice}}" tabindex="-1" style="display: none;" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title">Confirmar eliminación</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>¿Está seguro de eliminar esta variedad?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancelar</button>
+                            <button *ngIf="!load_btn_eliminar" class="btn btn-primary btn-sm" (click)="eliminar_variedad(indice)" type="button">Eliminar</button>
+                            <button *ngIf="load_btn_eliminar" type="button" class="btn btn-secondary" disabled>
+                              <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+                              Eliminando...
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </tbody>
+                </ng-container>
+                
+              </table>
+            </div>
+          </div>
+         
+        </div>
+        
+      </div>
+    </div>
+    <div class="card-footer">
+      <button *ngIf="!load_btn" class="btn btn-success mr-3" type="button" (click)="actualizar()">Guardar cambios</button>
+      <a *ngIf="!load_btn" class="btn btn-warning" [routerLink]="['/panel/productos']" routerLinkActive="router-link-active">Volver</a>
+      <button *ngIf="load_btn" type="button" class="btn btn-secondary">
+        <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+        Guardando...
+      </button>
+    </div>
+</div>  
+  
+
